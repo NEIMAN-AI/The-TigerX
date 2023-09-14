@@ -1,0 +1,21 @@
+import os
+from os import getenv
+from dotenv import load_dotenv
+
+
+API_ID = int(696969) 
+API_HASH = "" 
+
+SUDO_USERS = list(map(int, ("").split()))
+OWNER_ID = int(696969)
+MONGO_URL = "MONGO_URL"
+BOT_TOKEN = "BOT_TOKEN"
+ALIVE_PIC = 'https://te.legra.ph/file/e7e79853c995548720416.jpg'
+ALIVE_TEXT = None
+PM_LOGGER = None
+LOG_GROUP = None
+GIT_TOKEN = None 
+REPO_URL = "https://github.com/NEIMAN-AI/The-TigerX"
+BRANCH = "master" 
+ 
+STRING_SESSION = ""
