@@ -77,4 +77,4 @@ and you ended up in a Finale Battle with Telegram and at the end
 <p align="center"> 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 </p>
 
 <p align="center"><a href="https://t.me/The_Tiger_X"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐒𝐮𝐩𝐩𝐨𝐫𝐭-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>
-<p align="center"><a href="https://t.me/DETECTED_09"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐔𝐩𝐝𝐚𝐭𝐞𝐬-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>38.45"></a></p
+<p align="center"><a href="https://t.me/DETECTED_09"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐔𝐩𝐝𝐚𝐭𝐞𝐬-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>38.45"></a></p>
