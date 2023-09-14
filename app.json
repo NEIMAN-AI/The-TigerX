@@ -1,0 +1,35 @@
+{
+    "name": "The-TigerX",
+    "logo": "https://te.legra.ph/file/e7f0a402e5a781a19a39b.jpg"
+    "description": "An first Telegram Userbot.",
+    "keywords": ["pyrogram", "userbot"],
+    "repository": "https://github.com/NEIMAN-AI/The-TigerX",
+  "stack": "container",
+    "env": {
+        "STRING_SESSION": {
+            "description": "ғɪʟʟ ᴡɪᴛʜ ᴛʜᴇ ᴛᴇʟᴇᴛʜᴏɴ sᴇssɪᴏɴ sᴛʀɪɴɢ",
+            "required": true
+        },
+        "MONGO_URL": {
+            "description": "ғɪʟʟ ᴛʜᴇʀᴇ ᴀɴ ᴍᴏɴɢᴏ ᴅᴀᴛᴀʙᴀsᴇ ғʀᴏᴍ ᴍᴏɴɢᴏᴅʙ.ᴄᴏᴍ",
+            "required": true,
+            "value": ""
+        },
+        "SUDO_USERS": {
+            "description": "ғɪʟʟ ᴛʜᴇʀᴇ ʏᴏᴜʀ ɪᴅ ɢᴏ ᴛᴏ @miss_rosebot ᴘᴍ ᴀɴᴅ ᴛʏᴘᴇ /ɪᴅ",
+            "required": true,
+            "value": "1234567890"
+        },
+        "OWNER_ID": {
+            "description": "ғɪʟʟ ᴛʜᴇʀᴇ ʏᴏᴜʀ ɪᴅ ɢᴏ ᴛᴏ @miss_rosebot ᴘᴍ ᴀɴᴅ ᴛʏᴘᴇ /id",
+            "required": true,
+            "value": "1234567890"
+        },
+        "BOT_TOKEN": {
+            "description": "ғɪʟʟ ᴡɪᴛʜ ʏᴏᴜʀ ʙᴏᴛ ᴛᴏᴋᴇɴ ɢᴇᴛ ғʀᴏᴍ @BotFather ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ",
+            "required": true,
+            "value": ""
+        }
+
+    }
+  }
