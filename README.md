@@ -59,13 +59,29 @@
 # Vps/Locally Deploy
  ```console
  $ apt-get -y update
+```
+```console
  $ apt-get -y install git gcc python3-pip -y
+```
+```console
  $ git clone https://github.com/NEIMAN-AI/The-TigerX
+```
+```console
  $ cd The-TigerX
+```
+```console
  $ pip3 install -U -r requirements.txt
+```
+```console
  $ cp sample.env .env
+```
+ ```console
  $ nano .env
+```
+```console
  $ screen
+```
+```console
  $ python3 -m Tiger
 ``` 
  ------ 
