@@ -35,7 +35,7 @@ async def clone(bot: app, msg: Message):
     try:
         await text.edit("вσσтιиg уσυя ¢ℓιєит")
                    # change this Directry according to ur repo
-        client = Client(name="Melody", api_id=API_ID, api_hash=API_HASH, session_string=phone, plugins=dict(root="Zaid/modules"))
+        client = Client(name="Melody", api_id=API_ID, api_hash=API_HASH, session_string=phone, plugins=dict(root="Tiger/modules"))
         await client.start()
         user = await client.get_me()
         await msg.reply(f"уσυя ¢ℓιєит нαѕ вєєи ѕυ¢¢єѕѕfυℓℓу ѕтαят αѕ {user.first_name} ✅.")
