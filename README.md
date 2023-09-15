@@ -78,8 +78,12 @@
  - In short, Fork At Your Own Risk. 
   
  ------ 
-  
- 
+## Disclaimer 
+
+
+```console
+      ⚠️ WARNING FOR YOU ⚠️ Your account may get baned so use dummy account ⚡
+ ```
 
 <h3 align="center">
     ─「 sᴜᴩᴩᴏʀᴛ 」─
