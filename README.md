@@ -65,13 +65,6 @@
  $ pip3 install -U -r requirements.txt
  $ cp sample.env .env
  $ nano .env
-```
-
-<h3 align="center">
-   Edit <b>.env</b> with your own values and Run Tiger
-</h3>
-
-```console
  $ screen
  $ python3 -m Tiger
 ``` 
