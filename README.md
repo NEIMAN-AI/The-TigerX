@@ -3,7 +3,7 @@
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 </h2>
-<img src="https://readme-typing-svg.herokuapp.com?color=FF0&width=420&lines=⚡𝗧𝗵𝗲+𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺+𝗙𝗮𝘀𝘁𝗲𝘀𝘁+𝗨𝘀𝗲𝗿𝗕𝗼𝘁⚡;+⚡𝗣𝗼𝘄𝗲𝗿𝗲𝗱+𝗕𝘆+𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫⚡">
+<img src="https://readme-typing-svg.herokuapp.com?color=FF000000&width=420&lines=⚡𝗧𝗵𝗲+𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺+𝗙𝗮𝘀𝘁𝗲𝘀𝘁+𝗨𝘀𝗲𝗿𝗕𝗼𝘁⚡;+⚡𝗣𝗼𝘄𝗲𝗿𝗲𝗱+𝗕𝘆+𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫⚡">
 <p align="center"> 
  <img src="https://te.legra.ph/file/214219ca814c79ecc062a.jpg"> 
  </p> 
@@ -22,10 +22,10 @@
  </h3> 
  <h6 align="center"> 
   
- <b>⚡ ʙᴇsᴛ ᴜsᴇʀʙᴏᴛ ɪɴ ᴛᴇʟᴇɢʀᴀᴍ  ⚡</b> 
+ <b>⚡ʙᴇsᴛ ᴜsᴇʀʙᴏt ɪɴ ᴛᴇʟᴇɢʀᴀᴍ  ⚡</b> 
  </h6> 
   
- <h3> align="center"> 
+ <h3 align="center"> 
    <b>A ѕмσσтн & fαѕт тєℓєgяαм υѕєявσт вαѕє∂ σи ρуяσgяαм ℓιвяαяу.</b> 
  </h3> 
   
