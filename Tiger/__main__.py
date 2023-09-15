@@ -9,7 +9,7 @@ async def start_bot():
     await app.start()
     print("LOG: ғᴏᴜɴᴅᴇᴅ ʙᴏᴛ ᴛᴏᴋᴇɴ ʙᴏᴏᴛɪɴɢ..")
     for all_module in ALL_MODULES:
-        importlib.import_module("Zaid.modules" + all_module)
+        importlib.import_module("Tiger.modules" + all_module)
         print(f"sᴜᴄᴄᴇssғᴜʟʟʏ ɪᴍᴘᴏʀᴛᴇᴅ {all_module} ⚡")
     for cli in clients:
         try:
