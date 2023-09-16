@@ -6,7 +6,6 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 
-from Tiger.modules.help import add_command_help
 
 emojis = {
     "moon": list("🌗🌘🌑🌒🌓🌔🌕🌖"),
@@ -47,15 +46,3 @@ async def special_emojis(bot: Client, message: Message):
 
 
 # Command help section
-special_emoji_help = [
-    [".moon", "Cycles all the phases of the moon emojis."],
-    [".clock", "Cycles all the phases of the clock emojis."],
-    [".thunder", "Cycles thunder."],
-    [".heart", "Cycles heart emojis."],
-    [".earth `or` .globe", "Make the world go round."],
-]
-
-for x in special_emojis_dict:
-    special_emoji_help.append([f".{x}", special_emojis_dict[x]["help"]])
-
-add_command_help("emoji", special_emoji_help)
