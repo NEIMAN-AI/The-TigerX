@@ -4,8 +4,6 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 
-from Tiger.modules.help import add_command_help
-
 spam_chats = []
 
 
@@ -59,17 +57,3 @@ async def cancel_spam(client: Client, message: Message):
             pass
         return await message.edit("**𝗖𝗮𝗻𝗰𝗲𝗹𝗹𝗲𝗱 𝗯𝗮𝗯𝗲....**")
 
-
-add_command_help(
-    "tagall",
-    [
-        [
-            "tagall [text/reply ke chat]",
-            "𝗧𝗮𝗴 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗺𝗲𝗺𝗯𝗲𝗿𝘀 𝗼𝗻𝗲 𝗯𝘆 𝗼𝗻𝗲",
-        ],
-        [
-            "cancel",
-            f"𝘁𝗼 𝘀𝘁𝗼𝗽 𝘁𝗮𝗴𝗮𝗹𝗹",
-        ],
-    ],
-)
