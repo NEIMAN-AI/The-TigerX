@@ -20,7 +20,7 @@ async def sg(client: Client, message: Message):
             return await lol.edit(f"`𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗽𝗲𝗰𝗶𝗳𝘆 𝗮 𝘃𝗮𝗹𝗶𝗱 𝘂𝘀𝗲𝗿!`")
     bot = "SangMata_beta_bot"
     try:
-        await client.send_message(bot, f"/{user.id}")
+        await client.send_message(bot, f"{user.id}")
     except YouBlockedUser:
         await client.unblock_user(bot)
         await client.send_message(bot, f"{user.id}")
