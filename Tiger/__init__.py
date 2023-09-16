@@ -40,5 +40,5 @@ app = Client(
 
 if STRING_SESSION:
    print("Client: ғᴏᴜɴᴅ.. sᴛᴀʀᴛɪɴɢ...")
-   client1 = Client(name="one", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION1, plugins=dict(root="Tiger/modules"))
+   client1 = Client(name="one", api_id=API_ID, api_hash=API_HASH, session_string=STRING_SESSION, plugins=dict(root="Tiger/modules"))
    clients.append(client)
