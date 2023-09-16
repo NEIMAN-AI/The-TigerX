@@ -10,7 +10,6 @@ from Tiger.helper.PyroHelpers import GetUserMentionable
 from Tiger.helper.aiohttp_helper import AioHttp
 from Tiger.helper.constants import Fs, MEMES, Weebify
 from Tiger.helper.utility import get_mock_text
-from Tiger.modules.help import add_command_help
 
 
 @Client.on_message(filters.command("lorem", ".") & filters.me)
@@ -332,33 +331,3 @@ async def flip_text(bot: Client, message):
 async def silence_wench(bot: Client, message):
     await message.edit("Silence wench. Do not speak of the forbidden scripture to me. I was there when it was written.")
 
-
-
-add_command_help(
-    "text",
-    [
-        [".nice", "Replaces command with NICENICENICENICE."],
-        [".compliment", "Replaces command with a nice compliment."],
-        [".devexcuse", "Replaces command with an excuse that a developer would give."],
-        [".reverse", "Sends ASCII version of the Uno reverse card."],
-        [".slap", "Sends a randomly generated slap text. Can become very random at some times."],
-        [".insult", "Sends a randomly generated insult. Can become very random at some times."],
-        [".vapor", "Vaporizes the text."],
-        [".weeb `or` .weebify", "Weebifies the text."],
-        [".ok", "Sends -_____- with a fast animation."],
-        ["-_-", "Extends to -________-"],
-        [".f", "Pay respects"],
-        [".F", "Pay respects but filled"],
-        ["#f", "Pay respects but calligraphy."],
-        [".mockt", "Mock (text only version)"],
-        [".dice", "Send dice animation"],
-        [".target", "Send target animation"],
-        ["oof", "Oof"],
-        [";_; `or` .sad `or` cri", ";_;"],
-        [".ht", "Heads or Tails"],
-        [".reverset", "Reverses the text"],
-        [".shrug", "Random shrug"],
-        [".tableflip", "Flip the table"],
-        [".silence", "Silence wench"],
-    ],
-)
