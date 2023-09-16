@@ -5,7 +5,6 @@ from pyrogram.types import Message
 
 from Tiger import SUDO_USER
 from Tiger.helper.PyroHelpers import ReplyCheck
-from Tiger.modules.help import add_command_help
 
 
 @Client.on_message(
@@ -64,4 +63,3 @@ async def send_music(bot: Client, message: Message):
         await message.delete()
 
 
-add_command_help("music", [[".m `or` .music", "𝗦𝗲𝗮𝗿𝗰𝗵 𝘀𝗼𝗻𝗴𝘀 𝗮𝗻𝗱 𝘀𝗲𝗻𝗱."]])
