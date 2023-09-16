@@ -6,7 +6,6 @@ from pyrogram.types import Message
 
 from Tiger.helper.basic import edit_or_reply
 
-from Tiger.modules.help import *
 
 
 def googlesearch(query):
@@ -62,12 +61,3 @@ async def gs(client: Client, message: Message):
     await Man.edit(returnmsg)
 
 
-add_command_help(
-    "google",
-    [
-        [
-            "google",
-            "𝗙𝗲𝗮𝘁𝗰𝗵 𝗗𝗲𝘁𝗮𝗶𝗹𝘀 𝗼𝗻 𝗚𝗼𝗼𝗴𝗹𝗲.",
-        ],
-    ],
-)
