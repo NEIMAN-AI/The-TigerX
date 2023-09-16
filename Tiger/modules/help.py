@@ -19,37 +19,10 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
 
 @Client.on_message(filters.command(["help", "helpme"], ".") & filters.me)
 async def module_help(client: Client, message: Message):
-    cmd = message.command
-    help_arg = ""
-    bot_username = (await app.get_me()).username
-    if len(cmd) > 1:
-        help_arg = " ".join(cmd[1:])
-    elif not message.reply_to_message and len(cmd) == 1:
-        await message.edit("⚡️")
-        try:
-            nice = await client.get_inline_bot_results(bot=bot_username, query="helper")
-            await asyncio.gather(
-                message.delete(),
-                client.send_inline_bot_result(
-                    message.chat.id, nice.query_id, nice.results[0].id
-                ),
-            )
-        except BaseException as e:
-            print(f"{e}")
-            ac = PrettyTable()
-            ac.header = False
-            ac.title = "𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫"
-            ac.align = "l"
-            for x in split_list(sorted(CMD_HELP.keys()), 2):
-                ac.add_row([x[0], x[1] if len(x) >= 2 else None])
-            xx = await client.send_message(
-                message.chat.id,
-                f"```{str(ac)}```\n• @The_Tiger_X ⚡ @DETECTED_09 •",
-                reply_to_message_id=ReplyCheck(message),
-            )
-            await xx.reply(
-                f"**𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫**"
-            )
+    mg = await edit_or_reply(
+        message,
+        "╭✠╼━━━❰𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫❱━━━✠╮\n│» 𝗮𝗳𝗸\n│» 𝗺𝘂𝘀𝗶𝗰\n│» 𝗹𝘆𝗿𝗶𝗰𝘀\n│» 𝗴𝗼𝗼𝗴𝗹𝗲\n│» 𝗰𝗹𝗼𝗻𝗲\n│» 𝘀𝗽𝗮𝗺\n│» 𝗽𝗶𝗻𝗴\n│» 𝗮𝗹𝗶𝘃𝗲\n│» 𝘀𝘁𝗶𝗰𝗸𝗲𝗿𝘀\n│» 𝘀𝗮𝗻𝗴𝗺𝗲𝘁𝗮\n│» 𝗽𝗿𝗼𝗳𝗶𝗹𝗲\n│» 𝘁𝗲𝘅𝘁\n│» 𝗲𝗺𝗼𝗷𝗶\n│» 𝗱𝗺𝘀𝗽𝗮𝗺\n│» 𝘁𝗮𝗴𝗮𝗹𝗹\n│» 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗽𝗵\n│» 𝘃𝗰 𝘁𝗼𝗼𝗹𝘀\n│» 𝗷𝗼𝗶𝗻\n│» 𝗹𝗲𝗮𝘃𝗲\n│» 𝗜𝗻𝘃𝗶𝘁𝗲\n╰✠╼━━━━━━❖━━━━━━━✠╯"
+)
             return
 
     if help_arg:
