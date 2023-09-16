@@ -31,11 +31,10 @@ async def collect_afk_messages(bot: Client, message: Message):
 
         if GetChatID(message) not in CHAT_TYPE:
             text = (
-                f"`Beep boop. This is an automated message.\n"
-                f"I am not available right now.\n"
-                f"Last seen: {last_seen}\n"
-                f"Reason: ```{AFK_REASON.upper()}```\n"
-                f"See you after I'm done doing whatever I'm doing.`"
+                f"𝗜 𝗮𝗺 𝗻𝗼𝘁 𝗮𝘃𝗮𝗶𝗹𝗮𝗯𝗹𝗲 𝗿𝗶𝗴𝗵𝘁 𝗻𝗼𝘄...\n"
+                f"𝗟𝗮𝘀𝘁 𝘀𝗲𝗲𝗻: {last_seen}\n"
+                f"𝗥𝗲𝗮𝘀𝗼𝗻..: ```{AFK_REASON.upper()}```\n"
+
             )
             await bot.send_message(
                 chat_id=GetChatID(message),
@@ -47,11 +46,8 @@ async def collect_afk_messages(bot: Client, message: Message):
         elif GetChatID(message) in CHAT_TYPE:
             if CHAT_TYPE[GetChatID(message)] == 50:
                 text = (
-                    f"`This is an automated message\n"
-                    f"Last seen: {last_seen}\n"
-                    f"This is the 10th time I've told you I'm AFK right now..\n"
-                    f"I'll get to you when I get to you.\n"
-                    f"No more auto messages for you`"
+                    f"𝗟𝗮𝘀𝘁 𝘀𝗲𝗲𝗻: {last_seen}\n"
+                    f"𝗡𝗼 𝗺𝗼𝗿𝗲 𝗮𝘂𝘁𝗼 𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗳𝗼𝗿 𝘆𝗼𝘂`"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -62,10 +58,9 @@ async def collect_afk_messages(bot: Client, message: Message):
                 return
             elif CHAT_TYPE[GetChatID(message)] % 5 == 0:
                 text = (
-                    f"`Hey I'm still not back yet.\n"
-                    f"Last seen: {last_seen}\n"
-                    f"Still busy: ```{AFK_REASON.upper()}```\n"
-                    f"Try pinging a bit later.`"
+                    f"`𝗛𝗲𝘆 𝗜𝗺 𝘀𝘁𝗶𝗹𝗹 𝗻𝗼𝘁 𝗯𝗮𝗰𝗸 𝘆𝗲𝘁.\n"
+                    f"𝗟𝗮𝘀𝘁 𝘀𝗲𝗲𝗻: {last_seen}\n"
+                    f"𝗦𝘁𝗶𝗹𝗹 𝗯𝘂𝘀𝘆: ```{AFK_REASON.upper()}```\n"
                 )
                 await bot.send_message(
                     chat_id=GetChatID(message),
@@ -102,8 +97,8 @@ async def afk_unset(bot: Client, message: Message):
     if AFK:
         last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
         await message.edit(
-            f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-            f"messages from {len(USERS) + len(GROUPS)} chats`"
+            f"`𝗪𝗵𝗶𝗹𝗲 𝘆𝗼𝘂 𝘄𝗲𝗿𝗲 𝗮𝘄𝗮𝘆 (for {last_seen}), 𝘆𝗼𝘂 𝗿𝗲𝗰𝗲𝗶𝘃𝗲𝗱 {sum(USERS.values()) + sum(GROUPS.values())} "
+            f"𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗳𝗿𝗼𝗺 {len(USERS) + len(GROUPS)} 𝗰𝗵𝗮𝘁𝘀`"
         )
         AFK = False
         AFK_TIME = ""
@@ -122,8 +117,8 @@ if AFK:
        if AFK:
            last_seen = subtract_time(datetime.now(), AFK_TIME).replace("ago", "").strip()
            reply = await message.reply(
-               f"`While you were away (for {last_seen}), you received {sum(USERS.values()) + sum(GROUPS.values())} "
-               f"messages from {len(USERS) + len(GROUPS)} chats`"
+               f"`𝗪𝗵𝗶𝗹𝗲 𝘆𝗼𝘂 𝘄𝗲𝗿𝗲 𝗮𝘄𝗮𝘆 (for {last_seen}), 𝘆𝗼𝘂 𝗿𝗲𝗰𝗲𝗶𝘃𝗲𝗱 {sum(USERS.values()) + sum(GROUPS.values())} "
+               f"𝗺𝗲𝘀𝘀𝗮𝗴𝗲𝘀 𝗳𝗿𝗼𝗺 {len(USERS) + len(GROUPS)} chats`"
            )
            AFK = False
            AFK_TIME = ""
@@ -137,7 +132,7 @@ if AFK:
 add_command_help(
     "afk",
     [
-        [".afk", "Activates AFK mode with reason as anything after .afk\nUsage: ```.afk <reason>```"],
-        ["!afk", "Deactivates AFK mode."],
+        [".afk", "𝗔𝗰𝘁𝗶𝘃𝗮𝘁𝗲𝘀 𝗔𝗙𝗞 𝗺𝗼𝗱𝗲 𝘄𝗶𝘁𝗵 𝗿𝗲𝗮𝘀𝗼𝗻 𝗮𝘀 𝗮𝗻𝘆𝘁𝗵𝗶𝗻𝗴 𝗮𝗳𝘁𝗲𝗿 .𝗮𝗳𝗸\𝗻𝗨𝘀𝗮𝗴𝗲: ```.𝗮𝗳𝗸 <𝗿𝗲𝗮𝘀𝗼𝗻>```"],
+        ["!afk", "𝗗𝗲𝗮𝗰𝘁𝗶𝘃𝗮𝘁𝗲𝘀 𝗔𝗙𝗞 𝗺𝗼𝗱𝗲."],
     ],
 )      
