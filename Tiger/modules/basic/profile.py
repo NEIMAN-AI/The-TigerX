@@ -12,8 +12,6 @@ from pyrogram.types import Message
 from Tiger import SUDO_USER
 from Tiger.helper.PyroHelpers import ReplyCheck
 
-from Tiger.modules.help import add_command_help
-
 flood = {}
 profile_photo = "kidzz/pfp.jpg"
 
@@ -200,18 +198,3 @@ async def view_pfp(client: Client, message: Message):
     if os.path.exists(profile_photo):
         os.remove(profile_photo)
 
-
-add_command_help(
-    "profile",
-    [
-        ["block", "𝘁𝗼 𝗯𝗹𝗼𝗰𝗸 𝘀𝗼𝗺𝗲𝗼𝗻𝗲 𝗼𝗻 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗺"],
-        ["unblock", "𝘁𝗼 𝘂𝗻𝗯𝗹𝗼𝗰𝗸 𝘀𝗼𝗺𝗲𝗼𝗻𝗲 𝗼𝗻 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗺"],
-        ["setname", "𝘀𝗲𝘁 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗳𝗶𝗹𝗲 𝗻𝗮𝗺𝗲."],
-        ["setbio", "𝘀𝗲𝘁 𝗮𝗻 𝗯𝗶𝗼."],
-        [
-            "setpfp",
-            f"𝗿𝗲𝗽𝗹𝘆 𝘄𝗶𝘁𝗵 𝗶𝗺𝗮𝗴𝗲 𝘁𝗼 𝘀𝗲𝘁 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗳𝗶𝗹𝗲 𝗽𝗶𝗰.",
-        ],
-        ["vpfp", "𝗥𝗲𝗽𝗹𝘆 𝘄𝗶𝘁𝗵 𝘃𝗶𝗱𝗲𝗼 𝘁𝗼 𝘀𝗲𝘁 𝘆𝗼𝘂𝗿 𝘃𝗶𝗱𝗲𝗼 𝗽𝗿𝗼𝗳𝗶𝗹𝗲."],
-    ],
-)
