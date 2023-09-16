@@ -6,7 +6,7 @@ from pyrogram.types import *
 
 from Tiger.helper.basic import edit_or_reply, get_text, get_user
 
-from Tiger.modules.help import *
+
 
 OWNER = os.environ.get("OWNER", None)
 BIO = os.environ.get("BIO", "𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫 © @The_Tiger_X ")
@@ -52,10 +52,3 @@ async def revert(client: Client, message: Message):
     await message.edit("`𝗜 𝗮𝗺 𝗯𝗮𝗰𝗸!`")
 
 
-add_command_help(
-    "clone",
-    [
-        ["clone", "𝗧𝗼 𝗖𝗹𝗼𝗻𝗲 𝘀𝗼𝗺𝗲𝗼𝗻𝗲 𝗣𝗿𝗼𝗳𝗶𝗹𝗲...."],
-        ["revert", "𝗧𝗼 𝗚𝗲𝘁 𝗬𝗼𝘂𝗿 𝗔𝗰𝗰𝗼𝘂𝗻𝘁 𝗕𝗮𝗰𝗸..."],
-    ],
-)
