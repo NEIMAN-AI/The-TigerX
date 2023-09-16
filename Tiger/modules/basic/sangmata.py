@@ -6,7 +6,6 @@ from pyrogram.errors import YouBlockedUser
 from pyrogram.types import *
 
 
-from Tiger.modules.help import add_command_help
 from Tiger.modules.basic.profile import extract_user
 
 @Client.on_message(filters.command(["sg", "sa", "sangmata"], ".") & filters.me)
@@ -41,14 +40,3 @@ async def sg(client: Client, message: Message):
             await message.reply(stalk.text)
             await stalk.delete()
 
-
-add_command_help(
-    "sangmata",
-    [
-        [
-            "sg [reply/userid/username]",
-            "𝗜𝘁𝘀 𝗵𝗲𝗹𝗽 𝘂𝗵 𝘁𝗼 𝗳𝗶𝗻𝗱 𝘀𝗼𝗺𝗲𝗼𝗻𝗲 𝗻𝗮𝗺𝗲 𝗵𝗶𝘀𝘁𝗼𝗿𝘆.",
-        ],
-    ],
-)
-                                  
