@@ -9,7 +9,7 @@ from pyrogram.raw.types import InputGroupCall, InputPeerChannel, InputPeerChat
 from pyrogram.types import Message
 from Tiger import SUDO_USER
 from pyrogram.types import Message
-from Tiger.modules.help import add_command_help
+
 
 
 def get_arg(message: Message):
@@ -86,12 +86,3 @@ async def end_vc_(client: Client, message: Message):
         return
     await client.invoke(DiscardGroupCall(call=group_call))
     await message.reply_text(f"Ended group call in **Chat ID** : `{chat_id}`")
-
-
-add_command_help(
-    "vctools",
-    [
-        ["startvc", "Start voice chat of group."],
-        ["stopvc", "End voice chat of group."],
-    ],
-  )
