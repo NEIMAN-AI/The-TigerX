@@ -16,7 +16,7 @@ from Tiger.modules.help import *
 
 
 @Client.on_message(filters.command("alive", ".") & filters.me)
-async def hello_world(client: Client, link_preview=False, message: Message):
+async def hello_world(client: Client, message: Message):
     mg = await edit_or_reply(
         message,
         "⚡𝗧𝗶𝗴𝗲𝗿𝗫 𝗜𝘀 𝗢𝗻𝗹𝗶𝗻𝗲⚡\n╔═══❰𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫❱═══╗\n <b><i>『<a href='tg://settingstg'>[『 𝖳𝗁𝖾-𝖳𝗂𝗀𝖾𝗋𝖷』]</a> 』</i></b>\n╚══════════════╝"
