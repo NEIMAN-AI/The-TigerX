@@ -30,7 +30,7 @@ async def dmraid(xspam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
+              counts = int(Tiger[0])
               await e.reply_text("`Dm Raid Strated Successfully`")
               for _ in range(counts):
                     reply = choice(RAID)
@@ -48,7 +48,7 @@ async def dmraid(xspam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
+              counts = int(Tiger[0])
               await e.reply_text("Dm Raid Strated Successfully")
               for _ in range(counts):
                     reply = choice(RAID)
@@ -63,7 +63,7 @@ async def dmspam(spam: Client, e: Message):
       text = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       Tiger = text[1:]
       if len(Tiger) == 2:
-          msg = str(Zaid[1])
+          msg = str(Tiger[1])
           ok = await spam.get_users(text[0])
           id = ok.id
           if int(id) in VERIFIED_USERS:
@@ -73,7 +73,7 @@ async def dmspam(spam: Client, e: Message):
                 text = f"Abe Lawde that guy part of my devs."
                 await e.reply_text(text)
           else:
-              counts = int(Zaid[0])
+              counts = int(Tiger[0])
               await e.reply_text("Dm Spam Strated")
               for _ in range(counts):
                     await spam.send_message(id, msg)
