@@ -15,7 +15,6 @@ from Tiger.helper.constants import MEMES
 from Tiger.modules.help import *
 
 @Client.on_message(filters.command(["love", "love"], ".") & filters.me)
-async await asyncio.sleep(SLEEP * 3)
     await message.edit(" ▄▀▄▀")
     await asyncio.sleep(0.5)
     await message.edit("▄▀▄▀▄▀▄")
