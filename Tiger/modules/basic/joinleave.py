@@ -2,7 +2,6 @@ from pyrogram import Client, enums, filters
 from pyrogram.types import Message
 
 from Tiger import SUDO_USER
-from Tiger.modules.help import add_command_help
 
 @Client.on_message(
     filters.command(["join"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -67,17 +66,3 @@ async def kickmeallch(client: Client, message: Message):
         f"**Successfully left {done} Channel, failed to left {er} Channel**"
     )
 
-
-add_command_help(
-    "joinleave",
-    [
-        [
-            "kickme",
-            "To leave!!.",
-        ],
-        ["leaveallgc", "to leave all groups where you joined."],
-        ["leaveallch", "to leaveall channel where you joined."],
-        ["join [Username]", "give an specific username to join."],
-        ["leave [Username]", "give an specific username to leave."],
-    ],
-  )
