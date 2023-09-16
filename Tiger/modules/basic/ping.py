@@ -10,7 +10,6 @@ from Tiger import StartTime, app, SUDO_USER
 from Tiger.helper.PyroHelpers import SpeedConvert
 from Tiger.modules.bot.inline import get_readable_time
 
-from Tiger.modules.help import add_command_help
 
 class WWW:
     SpeedTest = (
@@ -88,10 +87,3 @@ async def pingme(client: Client, message: Message):
         f"**» -** {client.me.mention}" % (duration)
     )
 
-
-add_command_help(
-    "ping",
-    [
-        ["ping", "🏓ᴄʜᴇᴄᴋ ʙᴏᴛ ᴀʟɪᴠᴇ ᴏʀ ɴᴏᴛ⚡."],
-    ],
-)
