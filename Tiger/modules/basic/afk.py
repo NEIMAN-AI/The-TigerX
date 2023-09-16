@@ -6,7 +6,6 @@ from pyrogram import filters, Client
 from pyrogram.types import Message
 
 from Tiger.helper.PyroHelpers import GetChatID, ReplyCheck
-from Tiger.modules.help import add_command_help
 
 AFK = False
 AFK_REASON = ""
