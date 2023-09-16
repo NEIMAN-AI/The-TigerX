@@ -5,7 +5,6 @@ from pyrogram.types import Message
 from Tiger import SUDO_USER
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 
-from Tiger.modules.help import add_command_help
 
 
 @Client.on_message(
@@ -62,15 +61,3 @@ async def invite_link(client: Client, message: Message):
         except Exception:
             await um.edit("Denied permission")
 
-
-add_command_help(
-    "invite",
-    [
-        [
-            "invitelink",
-            "Get your private invite link. [Need Admin]",
-        ],
-        ["invite @username", "to invite someone."],
-        ["inviteall @username", "Mass adding (can affect your account)."],
-    ],
-)
