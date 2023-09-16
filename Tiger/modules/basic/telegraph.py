@@ -4,7 +4,6 @@ from telegraph import Telegraph, exceptions, upload_file
 import os
 
 
-from Tiger.modules.help import *
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegram")
@@ -61,13 +60,3 @@ async def uptotelegraph(client: Client, message: Message):
         wow_graph = f"**𝗨𝗽𝗹𝗼𝗮𝗱𝗲𝗱 𝗮𝘀..** [Telegraph](https://telegra.ph/{response['path']})"
         await tex.edit(wow_graph)
 
-
-add_command_help(
-    "telegraph",
-    [
-        [
-            f"telegraph `or` .tg",
-            "𝗧𝗼 𝘂𝗽𝗹𝗼𝗮𝗱 𝗼𝗻 𝘁𝗲𝗹𝗲𝗴𝗿𝗮𝗽𝗵.",
-        ],
-    ],
-)
