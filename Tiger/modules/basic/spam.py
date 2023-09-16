@@ -8,7 +8,6 @@ from pyrogram.types import Message
 from config import LOG_GROUP
 from Tiger import SUDO_USER 
 
-from Tiger.modules.help import add_command_help
 
 commands = ["spam", "statspam", "slowspam", "fastspam"]
 SPAM_COUNT = [0]
@@ -141,14 +140,3 @@ async def spam_stick(client: Client, message: Message):
                 await client.send_sticker(message.chat.id, sticker)
                 await asyncio.sleep(0.10)
 
-
-add_command_help(
-    "spam",
-    [
-        ["spam <amount of spam> <text>", "Spamming texts in chats!!"],
-        [
-            "delayspam <seconds> <amount of spam> <text>",
-            "Send spam text with a specified delay period!",
-        ],
-    ],
- )
