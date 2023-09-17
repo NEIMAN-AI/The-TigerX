@@ -1,105 +1,64 @@
-import time
+import asyncio
 
 from pyrogram import filters
-from pyrogram.types import Message, ChatPermissions
-
-from pyrogram.errors import UserAdminInvalid
+from pyrogram.methods.chats.get_chat_members import Filters as ChatMemberFilters
+from pyrogram.types import Message
 
 from Tiger import client
-from Tiger.helpers.PyroHelpers import GetUserMentionable
-from Tiger.helpers.adminHelpers import CheckAdmin, CheckReplyAdmin, RestrictFailed
-from Tiger.plugins.help import add_command_help
+from Tiger.modules.help import add_command_help
 
 
-@client.on_message(filters.command("ban", ".") & filters.me)
-async def ban_hammer(_, message: Message):
-    if await CheckReplyAdmin(message) is True and await CheckAdmin(message) is True:
-        try:
-            mention = GetUserMentionable(message.reply_to_message.from_user)
-            if message.command == ["ban", "24"]:
-                await UserBot.kick_chat_member(
-                    chat_id=message.chat.id,
-                    user_id=message.reply_to_message.from_user.id,
-                    until_date=int(time.time() + 86400),
+@UserBot.on_message(filters.command("pin", ".") & filters.me)
+async def pin_message(_, message: Message):
+    # First of all check if its a group or not
+    if message.chat.type in ["group", "supergroup"]:
+        # Here lies the sanity checks
+        admins = await UserBot.get_chat_members(
+            message.chat.id, filter=ChatMemberFilters.ADMINISTRATORS
+        )
+        admin_ids = [user.user.id for user in admins]
+        me = await UserBot.get_me()
+
+        # If you are an admin
+        if me.id in admin_ids:
+            # If you replied to a message so that we can pin it.
+            if message.reply_to_message:
+                disable_notification = True
+
+                # Let me see if you want to notify everyone. People are gonna hate you for this...
+                if len(message.command) >= 2 and message.command[1] in [
+                    "alert",
+                    "notify",
+                    "loud",
+                ]:
+                    disable_notification = False
+
+                # Pin the fucking message.
+                await UserBot.pin_chat_message(
+                    message.chat.id,
+                    message.reply_to_message.message_id,
+                    disable_notification=disable_notification,
                 )
-                await message.edit(f"{mention} has been banned for 24hrs.")
+                await message.edit("Pinned message!")
             else:
-                await UserBot.kick_chat_member(
-                    chat_id=message.chat.id,
-                    user_id=message.reply_to_message.from_user.id,
+                # You didn't reply to a message and we can't pin anything. ffs
+                await message.edit(
+                    "Reply to a message so that I can pin the god damned thing..."
                 )
-                await message.edit(f"{mention} has been banned indefinitely.")
-        except UserAdminInvalid:
-            await RestrictFailed(message)
+        else:
+            # You have no business running this command.
+            await message.edit("I am not an admin here lmao. What am I doing?")
+    else:
+        # Are you fucking dumb this is not a group ffs.
+        await message.edit("This is not a place where I can pin shit.")
+
+    # And of course delete your lame attempt at changing the group picture.
+    # RIP you.
+    # You're probably gonna get ridiculed by everyone in the group for your failed attempt.
+    # RIP.
+    await asyncio.sleep(3)
+    await message.delete()
 
 
-@client.on_message(filters.command("unban", ".") & filters.me)
-async def unban(_, message: Message):
-    if await CheckReplyAdmin(message) is True and await CheckAdmin(message) is True:
-        try:
-            mention = GetUserMentionable(message.reply_to_message.from_user)
-            await UserBot.unban_chat_member(
-                chat_id=message.chat.id, user_id=message.reply_to_message.from_user.id
-            )
-            await message.edit(
-                f"Congratulations {mention} you have been unbanned."
-                " Follow the rules and be careful from now on."
-            )
-        except UserAdminInvalid:
-            await message.edit("I can't unban this user.")
-
-
-# Mute Permissions
-mute_permission = ChatPermissions(
-    can_send_messages=False,
-    can_send_media_messages=False,
-    can_send_stickers=False,
-    can_send_animations=False,
-    can_send_games=False,
-    can_use_inline_bots=False,
-    can_add_web_page_previews=False,
-    can_send_polls=False,
-    can_change_info=False,
-    can_invite_users=True,
-    can_pin_messages=False,
-)
-
-
-@client.on_message(filters.command(["mute", "mute 24"], ".") & filters.me)
-async def mute_hammer(_, message: Message):
-    if await CheckReplyAdmin(message) is True and await CheckAdmin(message) is True:
-        try:
-            mention = GetUserMentionable(message.reply_to_message.from_user)
-            if message.command == ["mute", "24"]:
-                await UserBot.restrict_chat_member(
-                    chat_id=message.chat.id,
-                    user_id=message.reply_to_message.from_user.id,
-                    permissions=mute_permission,
-                    until_date=int(time.time() + 86400),
-                )
-                await message.edit(f"{mention} has been muted for 24hrs.")
-            else:
-                await UserBot.restrict_chat_member(
-                    chat_id=message.chat.id,
-                    user_id=message.reply_to_message.from_user.id,
-                    permissions=mute_permission,
-                )
-                await message.edit(f"{mention} has been muted indefinitely.")
-        except UserAdminInvalid:
-            await RestrictFailed(message)
-
-
-# Unmute permissions
-unmute_permissions = ChatPermissions(
-    can_send_messages=True,
-    can_send_media_messages=True,
-    can_send_stickers=True,
-    can_send_animations=True,
-    can_send_games=True,
-    can_use_inline_bots=True,
-    can_add_web_page_previews=True,
-    can_send_polls=True,
-    can_change_info=False,
-    can_invite_users=True,
-    can_pin_messages=False,
-)
+# Command help section
+add_command_help("admin", [[".pin", "Pin the replied to message."]])
