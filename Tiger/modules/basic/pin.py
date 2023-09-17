@@ -4,8 +4,6 @@ from pyrogram import filters, Client
 from pyrogram.methods.chats.get_chat_members import Filters as ChatMemberFilters
 from pyrogram.types import Message
 
-from Tiger.modules.help import add_command_help
-
 
 @UserBot.on_message(filters.command("pin", ".") & filters.me)
 async def pin_message(_, message: Message):
