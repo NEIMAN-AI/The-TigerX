@@ -1,6 +1,6 @@
 import asyncio
 
-from pyrogram import filters
+from pyrogram import filters, Client
 from pyrogram.methods.chats.get_chat_members import Filters as ChatMemberFilters
 from pyrogram.types import Message
 
