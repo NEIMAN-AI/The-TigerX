@@ -21,5 +21,5 @@ async def edit_or_reply(message: Message, *args, **kwargs) -> Message:
 async def module_help(client: Client, message: Message):
     mg = await edit_or_reply(
         message,
-        "╭✠╼━━━❰𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫❱━━━✠╮\n[ʜᴇʟᴘ ᴍᴇɴᴜ](t.me/DETECTED_09)"
+        "╭✠╼━━━❰𝗧𝗵𝗲-𝗧𝗶𝗴𝗲𝗿𝗫❱━━━✠╮\n\n\n [here](@DETECTED_09)"
     )
